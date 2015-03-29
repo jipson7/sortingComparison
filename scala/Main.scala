@@ -7,16 +7,18 @@ object Main {
 
   def main(args : Array[String]) {
 
+    runQuickSort()
+
     runMergeSort()
 
     runBubbleSort()
-
-    runQuickSort()
 
   }
 
 
   def runMergeSort() {
+
+    println("\n\nMERGE SORT\n\n")
 
     println("Integer Sorting\n/////////////");
 
@@ -58,6 +60,8 @@ object Main {
 
   def runBubbleSort() {
 
+    println("\n\nBUBBLE SORT\n\n")
+
     println("Integer Sorting\n/////////////");
 
     val sort1 = (a: Int, b: Int) => {a >= b}
@@ -97,6 +101,8 @@ object Main {
   }
 
   def runQuickSort() {
+
+    println("\n\nQUICK SORT\n\n")
 
     println("Integer Sorting\n/////////////");
 
