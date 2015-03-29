@@ -7,9 +7,13 @@ class Main {
 
 	public static void main(String[] args) {
 
-		int numItems = Integer.parseInt(args[0]);;
+		int numItems = 10;
 
 		long integerTime, floatTime, stringTime;
+
+		System.out.println("Running with 1000 items per list");
+
+		System.out.println("<----------Quick Sort--------->");
 
 		quicksort.Sort<Integer> driver1 = new quicksort.Sort<Integer>();
 		quicksort.Sort<Float> driver2 = new quicksort.Sort<Float>();
@@ -17,19 +21,20 @@ class Main {
 
 		////////////////////////////////////////////////////////
 
+		System.out.println("\nInteger test:\n///////////");
 		integerTime = runIntegerTestQuick(numItems, driver1);
-		System.out.print(integerTime + " ");
 
 		////////////////////////////////////////////////////////
 		
+		System.out.println("\nFloat test:\n///////////");
 		floatTime = runFloatTestQuick(numItems, driver2);
-		System.out.print(floatTime + " ");
 
 		///////////////////////////////////////////////////////
 		
+		System.out.println("\nString test:\n///////////");
 		stringTime = runStringTestQuick(numItems, driver3);
-		System.out.print(stringTime + " ");
 
+		System.out.println("\n<----------Merge Sort--------->");
 
 		mergesort.Sort<Integer> driver4 = new mergesort.Sort<Integer>();
 		mergesort.Sort<Float> driver5 = new mergesort.Sort<Float>();
@@ -37,18 +42,20 @@ class Main {
 
 		////////////////////////////////////////////////////////
 
+		System.out.println("\nInteger test:\n///////////");
 		integerTime = runIntegerTestMerge(numItems, driver4);
-		System.out.print(integerTime + " ");
 
 		////////////////////////////////////////////////////////
 		
+		System.out.println("\nFloat test:\n///////////");
 		floatTime = runFloatTestMerge(numItems, driver5);
-		System.out.print(floatTime + " ");
 
 		///////////////////////////////////////////////////////
 		
+		System.out.println("\nString test:\n///////////");
 		stringTime = runStringTestMerge(numItems, driver6);
-		System.out.print(stringTime + " ");
+
+		System.out.println("\n<----------Bubble Sort--------->");
 
 		bubblesort.Sort<Integer> driver7 = new bubblesort.Sort<Integer>();
 		bubblesort.Sort<Float> driver8 = new bubblesort.Sort<Float>();
@@ -56,20 +63,20 @@ class Main {
 
 		////////////////////////////////////////////////////////
 
+		System.out.println("\nInteger test:\n///////////");
 		integerTime = runIntegerTestBubble(numItems, driver7);
-		System.out.print(integerTime + " ");
 
 		////////////////////////////////////////////////////////
 		
+		System.out.println("\nFloat test:\n///////////");
 		floatTime = runFloatTestBubble(numItems, driver8);
-		System.out.print(floatTime + " ");
 
 		///////////////////////////////////////////////////////
 		
+		System.out.println("\nString test:\n///////////");
 		stringTime = runStringTestBubble(numItems, driver9);
-		System.out.print(stringTime + " ");
 
-		System.out.println();
+		System.out.println("\n<----------------------------->\n");
 		
 	}
 
@@ -85,9 +92,11 @@ class Main {
 
 		}
 		
+		System.out.println(driver);
 		final long startTime = System.currentTimeMillis();
 		driver.MainSort();
 		final long endTime = System.currentTimeMillis();
+		System.out.println(driver);
 
 		return (endTime - startTime);
 
@@ -105,9 +114,11 @@ class Main {
 
 		}
 		
+		System.out.println(driver);
 		final long startTime = System.currentTimeMillis();
 		driver.MainSort();
 		final long endTime = System.currentTimeMillis();
+		System.out.println(driver);
 
 		return (endTime - startTime);
 
@@ -121,9 +132,11 @@ class Main {
 
 		}
 
+		System.out.println(driver);
 		final long startTime = System.currentTimeMillis();
 		driver.MainSort();
 		final long endTime = System.currentTimeMillis();
+		System.out.println(driver);
 
 		return (endTime - startTime);
 
@@ -141,9 +154,11 @@ class Main {
 
 		}
 		
+		System.out.println(driver);
 		final long startTime = System.currentTimeMillis();
 		driver.MainSort();
 		final long endTime = System.currentTimeMillis();
+		System.out.println(driver);
 
 		return (endTime - startTime);
 
@@ -161,9 +176,11 @@ class Main {
 
 		}
 		
+		System.out.println(driver);
 		final long startTime = System.currentTimeMillis();
 		driver.MainSort();
 		final long endTime = System.currentTimeMillis();
+		System.out.println(driver);
 
 		return (endTime - startTime);
 
@@ -177,9 +194,11 @@ class Main {
 
 		}
 
+		System.out.println(driver);
 		final long startTime = System.currentTimeMillis();
 		driver.MainSort();
 		final long endTime = System.currentTimeMillis();
+		System.out.println(driver);
 
 		return (endTime - startTime);
 
@@ -197,9 +216,11 @@ class Main {
 
 		}
 		
+		System.out.println(driver);
 		final long startTime = System.currentTimeMillis();
 		driver.MainSort();
 		final long endTime = System.currentTimeMillis();
+		System.out.println(driver);
 
 		return (endTime - startTime);
 
@@ -217,9 +238,11 @@ class Main {
 
 		}
 		
+		System.out.println(driver);
 		final long startTime = System.currentTimeMillis();
 		driver.MainSort();
 		final long endTime = System.currentTimeMillis();
+		System.out.println(driver);
 
 		return (endTime - startTime);
 
@@ -233,9 +256,11 @@ class Main {
 
 		}
 
+		System.out.println(driver);
 		final long startTime = System.currentTimeMillis();
 		driver.MainSort();
 		final long endTime = System.currentTimeMillis();
+		System.out.println(driver);
 
 		return (endTime - startTime);
 

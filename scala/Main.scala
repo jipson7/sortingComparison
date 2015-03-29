@@ -7,120 +7,133 @@ object Main {
 
   def main(args : Array[String]) {
 
-    val currentLength: Int = args(0).toInt
+    runMergeSort()
 
-    runQuickSort(currentLength)
+    runBubbleSort()
 
-    runMergeSort(currentLength)
-
-    runBubbleSort(currentLength)
+    runQuickSort()
 
   }
 
 
-  def runMergeSort(currLength: Int) {
+  def runMergeSort() {
+
+    println("Integer Sorting\n/////////////");
 
     val sort1 = (a: Int, b: Int) => {a >= b}
 
-    var unsortedInt = List.fill(currLength)(Random.nextInt(100))
+    var unsortedInt = List.fill(10)(Random.nextInt(100))
 
-    var currentTime = java.lang.System.currentTimeMillis()
-    var holder1: List[Int] = mergesort.Sort.MergeSort(unsortedInt, sort1)
-    print(java.lang.System.currentTimeMillis() - currentTime + " ")
+    println(unsortedInt.mkString(" "))
 
-    ////////////////////////////////////
+    println((mergesort.Sort.MergeSort(unsortedInt, sort1)).mkString(" "))
+    println()
 
-    var sort3 = (a: Float, b: Float) => (a >= b)
+    ///////////////////////////////////
 
-    var unsortedFloat = List.fill(currLength)(Random.nextFloat())
-
-    currentTime = java.lang.System.currentTimeMillis()
-    var holder2 = mergesort.Sort.MergeSort(unsortedFloat, sort3)
-    print(java.lang.System.currentTimeMillis() - currentTime + " ")
-
-    ////////////////////////////////////
+    println("String Sorting\n/////////////")
 
     val sort2 = (a: String, b: String) => {a <= b}
 
-    var unsortedString = List.fill(currLength)(Random.alphanumeric.take(5).mkString)
+    var unsortedString = List.fill(10)(Random.alphanumeric.take(5).mkString)
 
+    println(unsortedString.mkString(" "))
 
-    currentTime = java.lang.System.currentTimeMillis()
-    var holder3: List[String] = mergesort.Sort.MergeSort(unsortedString, sort2)
-    print(java.lang.System.currentTimeMillis() - currentTime + " ")
-
-    //////////////////////////////////////
-
-  }
-
-  def runBubbleSort(currLength: Int) {
-
-    val sort1 = (a: Int, b: Int) => {a >= b}
-
-    var unsortedInt = Array.fill(currLength)(Random.nextInt(100))
-
-    var currentTime = java.lang.System.currentTimeMillis()
-    var holder1: Array[Int] = bubblesort.Sort.BubbleSort(unsortedInt, sort1)
-    print(java.lang.System.currentTimeMillis() - currentTime + " ")
-
+    println((mergesort.Sort.MergeSort(unsortedString, sort2)).mkString(" "))
+    println()
     ////////////////////////////////////
+
+    println("Float Testing\n/////////////")
 
     var sort3 = (a: Float, b: Float) => (a >= b)
 
-    var unsortedFloat = Array.fill(currLength)(Random.nextFloat())
+    var unsortedFloat = List.fill(10)(Random.nextFloat())
 
-    currentTime = java.lang.System.currentTimeMillis()
-    var holder2 = bubblesort.Sort.BubbleSort(unsortedFloat, sort3)
-    print(java.lang.System.currentTimeMillis() - currentTime + " ")
+    println(unsortedFloat.mkString(" "))
 
-    ////////////////////////////////////
-
-    val sort2 = (a: String, b: String) => {a <= b}
-
-    var unsortedString = Array.fill(currLength)(Random.alphanumeric.take(5).mkString)
-
-
-    currentTime = java.lang.System.currentTimeMillis()
-    var holder3: Array[String] = bubblesort.Sort.BubbleSort(unsortedString, sort2)
-    print(java.lang.System.currentTimeMillis() - currentTime + " ")
-
-    ////////////////////
+    println((mergesort.Sort.MergeSort(unsortedFloat, sort3)).mkString(" "))
     println()
 
   }
 
-  def runQuickSort(currLength: Int) {
+  def runBubbleSort() {
+
+    println("Integer Sorting\n/////////////");
 
     val sort1 = (a: Int, b: Int) => {a >= b}
 
-    var unsortedInt = List.fill(currLength)(Random.nextInt(100))
+    var unsortedInt = Array.fill(10)(Random.nextInt(100))
 
-    var currentTime = java.lang.System.currentTimeMillis()
-    var holder1: List[Int] = quicksort.Sort.QuickSort(unsortedInt, sort1)
-    print(java.lang.System.currentTimeMillis() - currentTime + " ")
+    println(unsortedInt.mkString(" "))
 
-    ////////////////////////////////////
+    println((bubblesort.Sort.BubbleSort(unsortedInt, sort1)).mkString(" "))
+    println()
 
-    var sort3 = (a: Float, b: Float) => (a >= b)
+    ///////////////////////////////////
 
-    var unsortedFloat = List.fill(currLength)(Random.nextFloat())
-
-    currentTime = java.lang.System.currentTimeMillis()
-    var holder2 = quicksort.Sort.QuickSort(unsortedFloat, sort3)
-    print(java.lang.System.currentTimeMillis() - currentTime + " ")
-
-    ////////////////////////////////////
+    println("String Sorting\n/////////////")
 
     val sort2 = (a: String, b: String) => {a <= b}
 
-    var unsortedString = List.fill(currLength)(Random.alphanumeric.take(5).mkString)
+    var unsortedString = Array.fill(10)(Random.alphanumeric.take(5).mkString)
 
+    println(unsortedString.mkString(" "))
 
-    currentTime = java.lang.System.currentTimeMillis()
-    var holder3: List[String] = quicksort.Sort.QuickSort(unsortedString, sort2)
-    print(java.lang.System.currentTimeMillis() - currentTime + " ")
+    println((bubblesort.Sort.BubbleSort(unsortedString, sort2)).mkString(" "))
+    println()
+    ////////////////////////////////////
 
-    ////////////////////
+    println("Float Testing\n/////////////")
+
+    var sort3 = (a: Float, b: Float) => (a >= b)
+
+    var unsortedFloat = Array.fill(10)(Random.nextFloat())
+
+    println(unsortedFloat.mkString(" "))
+
+    println((bubblesort.Sort.BubbleSort(unsortedFloat, sort3)).mkString(" "))
+    println()
+
+  }
+
+  def runQuickSort() {
+
+    println("Integer Sorting\n/////////////");
+
+    val sort1 = (a: Int, b: Int) => {a >= b}
+
+    var unsortedInt = List.fill(10)(Random.nextInt(100))
+
+    println(unsortedInt.mkString(" "))
+
+    println((quicksort.Sort.QuickSort(unsortedInt, sort1)).mkString(" "))
+    println()
+
+    ///////////////////////////////////
+
+    println("String Sorting\n/////////////")
+
+    val sort2 = (a: String, b: String) => {a <= b}
+
+    var unsortedString = List.fill(10)(Random.alphanumeric.take(5).mkString)
+
+    println(unsortedString.mkString(" "))
+
+    println((quicksort.Sort.QuickSort(unsortedString, sort2)).mkString(" "))
+    println()
+    ////////////////////////////////////
+
+    println("Float Testing\n/////////////")
+
+    var sort3 = (a: Float, b: Float) => (a >= b)
+
+    var unsortedFloat = List.fill(10)(Random.nextFloat())
+
+    println(unsortedFloat.mkString(" "))
+
+    println((quicksort.Sort.QuickSort(unsortedFloat, sort3)).mkString(" "))
+    println()
+
   }
 
 }
