@@ -61,7 +61,7 @@ Using a series of bash and matlab scripts I was able to visualize some of the da
 
 First comparing the various sorting methods. 
 
-We can see that MergeSort and BubbleSort are very similar in performance, notice their y-axis. The Bubble sort is terrible in all cases, but especially it seems for Sorting java strings. This is odd because the way I implemented the random strings, java only selects from lower case letters, while the scala implementation selects from Upper, lower, and numeric characters. Having the larger character set I was almost certain scala would be slower. The method I used for both languages is near identical for bubble sort.
+We can see that MergeSort and QuickSort are very similar in performance, notice their y-axis. The Bubble sort is terrible in all cases, but especially it seems for Sorting java strings. This is odd because the way I implemented the random strings, java only selects from lower case letters, while the scala implementation selects from Upper, lower, and numeric characters. Having the larger character set I was almost certain scala would be slower. The method I used for both languages is near identical for bubble sort.
 
 Next notice the similarities between MergeSort and QuickSort, not only are their axis at the same range, but the shape of each line pair accross graphs seems to be a mirror image, if only a slight bit scaled. The implementation is also very language specific in each case. The java implemntations stayed fairly close to the pseudo code for each algorithm, where as the scala implemntations use much of scala's syntactic sugar. 
 
