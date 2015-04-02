@@ -2,7 +2,7 @@
 
 (defn quick-sort [[pivot & xs]]
   (when pivot
-    (let [smaller #(> pivot %)]
+    (let [smaller #(cust-comp pivot %)]
       (lazy-cat (quick-sort (filter smaller xs))
     [pivot]
     (quick-sort (remove smaller xs))))))
