@@ -1,11 +1,9 @@
 (ns sorting)
 
-(defn test-comp [a b] (> a b))
-
 (defn bubble-swap [the-list]
   (if (or (nil? the-list) (nil? (second the-list)))
     the-list
-    (if (test-comp (first the-list) (second the-list))
+    (if (cust-comp (first the-list) (second the-list))
       (cons (second the-list) (cons (first the-list) (nthrest the-list 2)))
       (cons (first the-list) (bubble-swap (rest the-list))))))
 

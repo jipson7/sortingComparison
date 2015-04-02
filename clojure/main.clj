@@ -1,5 +1,7 @@
 (ns sorting (:use clojure.pprint))
 
+(defn cust-comp [a b] (> a b))
+
 (load-file "./bubblesort/sort.clj")
 (load-file "./quicksort/sort.clj")
 (load-file "./mergesort/sort.clj")
