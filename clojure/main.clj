@@ -1,6 +1,9 @@
 (ns sorting (:use clojure.pprint))
 
-(defn cust-comp [a b] (> a b))
+(defn cust-comp [a b] 
+  (cond
+    (>= (compare a b) 0) true
+    (< (compare a b) 0) false))
 
 (load-file "./bubblesort/sort.clj")
 (load-file "./quicksort/sort.clj")
