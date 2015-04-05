@@ -3,13 +3,13 @@
 This is an implementation of Quick Sort, Merge Sort, and Bubble Sort in both Scala, Clojure, and Java. It is meant to compare the ease of programming, coding style, and efficiency of each language. It should be noted that I have had more experience with Java than with Scala or Clojure prior to performing this test, so the number of compiler errors should be taken with a grain of salt. Although the few errors with Clojure should maybe indicate an easier programming experience.
 
 #####Number of compile/runtime errors during the writing of each algorithm for each language. 
-*Note: *If there were multiple errors in any single compile, only one was fixed at a time, and then the code was recompiled. This gives a more accurate estimate rather than fixing multiple errors at once.
+*Note: *If there were multiple errors in any single compile/run, only one was fixed at a time, and then the code was recompiled. This gives a more accurate estimate rather than fixing multiple errors at once.
 
 | Algorithm | Java | Scala|Clojure|
 |-----------|------|------|-------|
 |Bubble Sort|  25  |   40 | 16    |
 |Quick Sort |   7  |   20 |  10   |
-|Merge Sort |   5  |  27 |   4    |
+|Merge Sort |   5  |  27  |   4   |
 
 To compile the java section
 
@@ -36,7 +36,7 @@ java Main <# Items per List>
 scala Main <# Items per List>
 
 ```
-or (in the clojure directory)
+or for a clojure time comparison, switch to the clojure-time branch, which is used as follows.
 
 ```
 ./clj main.clj
@@ -116,11 +116,15 @@ Results
 ![](graphing/clojure-2.png)
 ![](graphing/clojure-3.png)
 
+#####Data Discussion
+
 The performance of clojure varied greatly for different sorting algorithms. As you can see from the first graph, the bubble sort time was so overwhelmingly poor, that it made the other graphs not viewable at that scale. This could be attributed to the fact that it is a poor algorithm, as well as my implementation being poor.
 
 After removing bubble sort from the graphs, we can see merge sort and quick sort in the second graph. Although the times are much more reasonable, the implementation of merge sort is still overwhelmingly slow compared to quick sort.
 
 The final graph shows quick sort on its own. Not only were both merge sort and quick sort quicker than both the java and scala implementations, but quick sort seems to have a constant time complexity of less that 0.1 milliseconds. This is incredibly quick and a perfect example of the power of a functional programming language.
+
+#####Implementation Discussion
 
 Implementing the comparators in clojure was accomplished by defining a function called cust-comp that was used in each sorting algorithm, changing this function changes the order and style of sorting. Clojure's 'compare' must be used to maintain generic nature for any custom comparator that's implemented.
 
