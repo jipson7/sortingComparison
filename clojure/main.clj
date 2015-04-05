@@ -16,27 +16,31 @@
 
 (load-file "./bubblesort/sort.clj")
 (load-file "./quicksort/sort.clj")
-(load-file "./mergesort/sort.clj")
+(load-file "./mergesort/sort.clj")  
 
-(def num-in-list 100)
-(defn rand-int-list [] (take num-in-list (repeatedly #(rand-int 100))))
-(defn rand-float-list [] (take num-in-list (repeatedly #(rand 100))))
-(defn rand-string-list [] (take num-in-list (repeatedly #(random-str 5))))
+;(def numElements 100)
+(defn rand-int-list [num-in-list] (take num-in-list (repeatedly #(rand-int 100))))
+(defn rand-float-list [num-in-list] (take num-in-list (repeatedly #(rand 100))))
+(defn rand-string-list [num-in-list] (take num-in-list (repeatedly #(random-str 5))))
 
 (defn extract-time [timeString] (re-seq #"[0-9]+\.[0-9]+" timeString))
 
-(def timeList (vector (let [x (rand-int-list)] (with-out-str (time (bubble-sort x))))
-                      (let [x (rand-float-list)] (with-out-str (time (bubble-sort x))))
-                      (let [x (rand-string-list)] (with-out-str (time (bubble-sort x))))
-                      (let [x (rand-int-list)] (with-out-str (time (quick-sort x))))
-                      (let [x (rand-float-list)] (with-out-str (time (quick-sort x))))
-                      (let [x (rand-string-list)] (with-out-str (time (quick-sort x))))
-                      (let [x (rand-int-list)] (with-out-str (time (merge-sort x))))
-                      (let [x (rand-float-list)] (with-out-str (time (merge-sort x))))
-                      (let [x (rand-string-list)] (with-out-str (time (merge-sort x))))))
+(defn timeList [numElements] 
+  (vector 
+    (let [x (rand-int-list numElements)] (with-out-str (time (quick-sort x))))
+    (let [x (rand-float-list numElements)] (with-out-str (time (quick-sort x))))
+    (let [x (rand-string-list numElements)] (with-out-str (time (quick-sort x))))
+    (let [x (rand-int-list numElements)] (with-out-str (time (merge-sort x))))
+    (let [x (rand-float-list numElements)] (with-out-str (time (merge-sort x))))
+    (let [x (rand-string-list numElements)] (with-out-str (time (merge-sort x))))
+    ;(let [x (rand-int-list numElements)] (with-out-str (time (bubble-sort x))))
+    ;(let [x (rand-float-list numElements)] (with-out-str (time (bubble-sort x))))
+    ;(let [x (rand-string-list numElements)] (with-out-str (time (bubble-sort x))))
+    ))
 
-;(pprint timeList)
 
-(apply print (flatten (map extract-time timeList)))
+(defn get-time-row [xElements] (flatten (map extract-time (timeList xElements))))
+
+(println (flatten (interpose "\n" (map #(doall (get-time-row %)) (range 100 10000 100)))))
 
 ;bubble (int, float, string), quick (int, float, string), merge (int, float, string)
