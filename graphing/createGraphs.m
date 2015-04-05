@@ -1,6 +1,6 @@
-javaFileName = 'data-java.txt';
+clojureFileName = 'data-java.txt';
 
-data = importdata(javaFileName);
+data = importdata(clojureFileName);
 
 fittype = 'poly5';
 
